@@ -29,7 +29,7 @@ For the gui mode, we do it together with [noVNC](https://github.com/novnc/noVNC)
   Wait for the run to finish, check for errors, and if everything is fine, look at the end of the output, you can get a web address, for example:
   
   ```
-  >>> juicebox-GUI ===> http://localhost:5801/vnc.html <<<
+  >>> juicebox-GUI ===> http://localhost:5802/vnc.html <<<
   ```
 
   Copy the URL and open it in your browser to access juicebox-gui:

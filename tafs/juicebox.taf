@@ -1,7 +1,7 @@
 +TOOL:juicebox
 ARGS
     <else>
-        cat ::*LOAD-DIR*::../juicebox.info.txt
+        :
     <main>
         # java -Xmx::m:: -jar /juicebox.jar
         :
@@ -9,7 +9,7 @@ ARGS
         passwd        ::pd::            # [default 12345678]
         memory        ::m::             # memory of juicebox [default 4g]
         ctype         ::c::             # container type     [default container]
-        port          ::p::             # port for http gui  [default 5801]
+        port          ::p::             # port for http gui  [default 5802]
         pset          -p ::port:::5801
     <opts-default>
         pd  12345678

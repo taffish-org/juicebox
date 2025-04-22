@@ -1,20 +1,15 @@
 +TOOL:juicebox
 ARGS
-    <else>
-        :
-    <main>
-        # java -Xmx::m:: -jar /juicebox.jar
-        :
     <opts>
         passwd        ::pd::            # [default 12345678]
         memory        ::m::             # memory of juicebox [default 4g]
-        ctype         ::c::             # container type     [default container]
+        ctype         ::c::             # container type     [default podman>docker]
         port          ::p::             # port for http gui  [default 5802]
         pset          -p ::port:::5801
     <opts-default>
         pd  12345678
         m   4g
-        c   container
+        c   $$if ( podman ps > /dev/null 2>&1 ); then echo 'podman'; else echo 'docker'; fi$$
         p   5802
 RUN
     <::ctype:::taf-juicebox-v3.1.4:ghcr.io/taffish-org/juicebox:3.1.4$::pset::>
@@ -30,4 +25,3 @@ RUN
         echo '>>> juicebox-GUI ===> http://localhost:'"::port::"'/vnc.html <<<'
         echo ''
         cd /root/
-        ::*MAIN*::

@@ -9,7 +9,7 @@ ARGS
     <opts-default>
         pd  12345678
         m   4g
-        c   container
+        c   podman/docker
         p   5802
 RUN
     <::ctype:::taf-juicebox-v3.1.4:ghcr.io/taffish-org/juicebox:3.1.4$::pset::>
